@@ -19,14 +19,11 @@ function QuestionCard({ question, timeLeft, onSubmitAnswer, answerResult }) {
   };
   
   // Import all images - in a real app you would handle this differently
-  const getImagePath = (imageName) => {
-    try {
-      // This is a placeholder - you'd need to actually import the images
-      return `/src/assets/images/animals/${imageName}`;
-    } catch (error) {
-      return '/src/assets/images/placeholder.png';
-    }
-  };
+ // Get correct public path for image
+const getImagePath = (imageName) => {
+  return `/images/animals/${imageName}`; // This now works in production too
+};
+
   
   const getOptionClass = (option) => {
     if (!answerResult) {
